@@ -13,7 +13,8 @@ func _ready() -> void:
 
 
 func _on_area_entered(hurtbox:Hurtbox2d):
-	if hurtbox.is_in_group("hurtbox"):
 
+	if hurtbox.is_in_group("hurtbox"):
+		print("%s Hit!  %s" % [get_parent().name, hurtbox.get_parent().name])
 		hit.emit(hurtbox)
 		hurtbox.hurt.emit(self)
